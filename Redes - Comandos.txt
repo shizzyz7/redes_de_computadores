@@ -1,0 +1,34 @@
+Comando para Hostname:
+en > conf t > hostname [nome]
+
+Comando para senha no modo enable:
+en > conf t > enable secret [senha]
+
+Comando para senha no console:
+en > conf t > line con 0 > password [senha] > login
+
+Comando para as linhas vty:
+em > conf t > line vty 0 4 > login local > transport input ssh
+
+Comando para nome de domínio e usuário:
+en > conf t > ip domain-name [nome] >  crypto key generate rsa modulus 1024 > username [nome] secret [senha]
+
+Comando para roteadores:
+en > conf t > int se0/0/0 > ip address [ip e máscara] > encapsulation ppp > no shutdown [ligar]
+en > conf t > int g0/0 > ip address [ip e máscara] > speed 1000 > duplex full > no shutdown [ligar]
+
+Comando de ip para switches:
+en > conf t > int vlan 1 > ip address [ip e máscara] > no shutdown [ligar]
+en > conf t > ip default-gateway [ip]
+
+Desativar portas:
+en > conf t > int range [range] > shutdown
+
+Comandos para ver:
+sh interfaces status - mostra as portas habilitadas e desabilitadas
+sh ip int br - mostra o estado das interfaces
+sh running-config - mostra a configuração ativa no equipamento
+
+Comandos para rotas:
+en > conf t > ip route [rede para conhecer e máscara] [roteador]
+en > conf t > ip route [rede para conhecer e máscara] [roteador] [grau]
